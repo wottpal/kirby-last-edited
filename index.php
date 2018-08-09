@@ -28,11 +28,19 @@ Kirby::plugin('wottpal/last-edited', [
 
   'fields' => [
     'lastEdited' => [
+
       'props' => [
         'value' => function ($value = null) {
           return $value;
         }
       ],
+
+      'computed' => [
+          'modified' => function() {
+            return $this->model()->modified();
+          }
+      ]
+
     ],
   ]
 
